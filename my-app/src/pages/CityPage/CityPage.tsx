@@ -22,19 +22,6 @@ export const CityPage: React.FC = () => {
     <div className="CityPage">
       {selectedCity && (
         <Card sx={{ minWidth: 275, position: 'relative' }}>
-          {/* <ClearIcon style={{ 
-            position: 'absolute',
-            display: 'flex',
-            justifyContent: 'end',
-            right: '14px',
-            top: '14px',
-            cursor: 'pointer'
-          }}
-            onClick={(e) => {
-              e.preventDefault();
-              dispatch(deleteCityCard(city));
-            }}
-          /> */}
           <CardContent>
             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
               {moment(selectedCity.date).format('MMM Do, h:mm a')}
