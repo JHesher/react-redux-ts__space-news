@@ -1,0 +1,60 @@
+@import './styles/variables';
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+
+  width: 100vw;
+  height: 100vh;
+  background-color: $bg;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 90px;
+
+    width: 100%;
+    height: 80px;
+    background-color: $light-blue;
+    font-family: 'Anek Telugu', sans-serif;
+    text-transform: uppercase;
+    font-size: 32px;
+    line-height: 48px;
+    letter-spacing: 0.05em;
+    color: $white;
+  }
+
+  &__main {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    height: calc(100% - 80px);
+  }
+
+  &__sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+  
+    width: 30%;
+    height: 100%;
+  }
+
+  &__pages {
+    display: flex;
+    overflow: auto;
+  
+    padding: 2%;
+    width: 70%;
+    height: 100%;
+
+    overflow: visible;
+    overflow-y: auto;
+  }
+}
+

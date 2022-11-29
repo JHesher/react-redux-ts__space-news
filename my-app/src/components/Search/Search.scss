@@ -1,0 +1,37 @@
+.Search {
+  display: flex;
+  width: 100%;
+
+  &__container {
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  & .MuiFormControl-root.MuiTextField-root {
+    margin: 0;
+    width: 100%;
+  }
+
+  & .MuiButtonBase-root.MuiButton-root {
+    font-size: 16px;
+    border-radius: 0 4px 4px 0;
+    text-transform: none;
+
+  }
+
+  & .MuiInputBase-input.MuiOutlinedInput-input {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+  
+  & .MuiInputBase-root.MuiOutlinedInput-root {
+    border-radius: 4px 0 0 4px;
+  }
+
+  & .MuiOutlinedInput.notchedOutline {
+    top: -5px;
+    bottom: -1px;
+  }
+}
