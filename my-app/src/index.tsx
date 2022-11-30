@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter  } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import reportWebVitals from './reportWebVitals';
 import { persistor, store } from './redux/store';
@@ -13,13 +13,13 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <BrowserRouter>
+  <HashRouter>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <App />
       </PersistGate>
     </Provider>
-  </BrowserRouter>
+  </HashRouter>
 );
 
 reportWebVitals();

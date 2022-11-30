@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "home": "http://{github-username}.github.io/{repo-name}",
+  "homepage": "http://JHesher.github.io/react-redux-ts__city-weather",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
