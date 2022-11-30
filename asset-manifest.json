@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-redux-ts__city-weather/static/css/main.9f48ff9e.css",
-    "main.js": "/react-redux-ts__city-weather/static/js/main.860fb96a.js",
+    "main.js": "/react-redux-ts__city-weather/static/js/main.b7d0f356.js",
     "static/js/787.28cb0dcd.chunk.js": "/react-redux-ts__city-weather/static/js/787.28cb0dcd.chunk.js",
     "index.html": "/react-redux-ts__city-weather/index.html",
     "main.9f48ff9e.css.map": "/react-redux-ts__city-weather/static/css/main.9f48ff9e.css.map",
-    "main.860fb96a.js.map": "/react-redux-ts__city-weather/static/js/main.860fb96a.js.map",
+    "main.b7d0f356.js.map": "/react-redux-ts__city-weather/static/js/main.b7d0f356.js.map",
     "787.28cb0dcd.chunk.js.map": "/react-redux-ts__city-weather/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9f48ff9e.css",
-    "static/js/main.860fb96a.js"
+    "static/js/main.b7d0f356.js"
   ]
 }
