@@ -1,5 +1,5 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import weatherReducer from './weatherSlice';
+import weatherReducer from './newsSlice';
 import storage from 'redux-persist/lib/storage';
 import thunk from 'redux-thunk';
 import {
@@ -19,7 +19,7 @@ const persistConfig = {
 };
 
 export const rootReducer = combineReducers({
-  weather: weatherReducer,
+  news: weatherReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

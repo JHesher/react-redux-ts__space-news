@@ -1,19 +1,39 @@
 import axios from 'axios';
 
-const KeyAPI = '6b21cc570e621db9ca7efc6f7a9d5d1e';
+const API = 'https://api.spaceflightnewsapi.net';
+const Articles_API = `${API}/v3/articles`;
 
-const API = "http://api.openweathermap.org";
-const Geo_API = `${API}/geo/1.0/direct?`;
-const Weather_API = `${API}/data/2.5/weather?`;
-
-export async function getCoordByNameAPI(city: string) {
-  return await axios.get(`${Geo_API}q=${city}&limit=5&appid=${KeyAPI}`);
+export interface INewsList {
+  id: number,
+  title: string,
+  url: string,
+  imageUrl: string,
+  newsSite: string,
+  summary: string,
+  publishedAt: string,
+  updatedAt: string,
+  featured: boolean,
+  launches: ILaunches[],
+  events?: []
 };
 
-export async function getWeatherInfoAPI(city: Coord) {
-    return await axios.get(`${Weather_API}lat=${city.lat}&lon=${city.lon}&appid=${KeyAPI}`);
-  };
+export interface ILaunches {
+  id: string,
+  provider: string
+}
 
-export async function fetchProducts() {
-  return await axios.get('https://testbackend.nc-one.com/image');
+export async function getNewsListAPI(input: string[]) {
+  let params = new URLSearchParams();
+  params.append('_limit', '30');
+
+    for (let value of input) {
+      const searchParam = `title_contains[${input.indexOf(value)}]`
+      params.append(searchParam, `${value}`);
+    }
+
+  return await axios.get<INewsList>(Articles_API, { params });
+};
+
+export async function getNewsByIdAPI(id: number) {
+  return await axios.get<INewsList>(`${Articles_API}/${id}`);
 };

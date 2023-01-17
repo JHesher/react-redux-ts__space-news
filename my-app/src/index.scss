@@ -12,17 +12,16 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Open Sans', sans-serif !important;
+  font-family: 'Montserrat', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: $gray;
+  color: $gray-dark;
   overflow: visible;
   overflow-y: auto;
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 0px;
   background-color: $gray-mid;
 }
 
@@ -31,7 +30,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: $light-blue;
+  background-color: $gray-light;
   border-radius: 10px;
 }
 
@@ -74,15 +73,26 @@ span {
 
 ::selection {
   background: rgba(229, 196, 252, 0.75);
-  color: #363636;
+  color: $gray-mid;
 }
 
 ::-moz-selection {
   background: rgba(229, 196, 252, 0.75);
-  color: #363636;
+  color: $gray-mid;
 }
 
 ::-webkit-selection {
   background: rgba(229, 196, 252, 0.75);
-  color: #363636;
+  color: $gray-mid;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #EAEAEA;
+  margin-bottom: 45px;
 }

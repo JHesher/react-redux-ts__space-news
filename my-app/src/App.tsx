@@ -1,40 +1,22 @@
 import React from 'react';
 import './App.scss';
 import { Routes, Route } from 'react-router-dom';
-import { CityListPage } from './pages/CityListPage';
-import { Sidebar } from './components/Sidebar';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { CityPage } from './pages/CityPage';
+import { ArticlePage } from './pages/ArticlePage';
+import { NewsListPage } from './pages/NewsListPage/NewsListPage';
 
 function App() {
   return (
     <div className="App">
-      <div className="App__header">
-        <div className="App__title">
-          GET WEATHER
-        </div>
-      </div>
-      <div className="App__main">
-        <div className="App__sidebar">
-          <Sidebar />
-        </div>
-        <div className="App__pages">
+      {/* <div className="App__main"> */}
         <Routes>
-          <Route path="/" element={ <CityListPage /> }/>
-          <Route path="/city-page" element={ <CityPage /> }/>
+          <Route path="/" element={ <NewsListPage /> }/>
+          <Route path="article-page/:id" element={ <ArticlePage /> }/>
         </Routes>
-        </div>
-      </div>
-      <ToastContainer  autoClose={2000} theme="colored"/>
+      {/* </div> */}
     </div>
-
-
-    // <div className="App">
-    //   <Search/>
-    //   {/* <CityListPage/> */}
-    // </div>
   );
 };
 

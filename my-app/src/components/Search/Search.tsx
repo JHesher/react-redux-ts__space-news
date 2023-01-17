@@ -1,60 +1,71 @@
 import React from 'react';
 import './Search.scss';
-import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../../redux/store';
-import { getCoordByName } from '../../redux/weatherSlice';
 
-import { Box, TextField, Button } from '@mui/material';
-import { Controller, useForm } from 'react-hook-form';
+import { Box, TextField, InputAdornment, FormLabel, FormControl, FormControlProps } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
+import styled from '@emotion/styled';
 
-export const Search: React.FC = () => {
-  const dispatch = useDispatch<AppDispatch>();
+const SearchInput = styled(FormControl)<FormControlProps>(({ theme }) => ({
+  width: '100%',
+  '& .MuiFormLabel-root': {
+    color: '#363636',
+    fontFamily: 'Montserrat, sans-serif !important',
+    fontWeight: 600,
+    marginBottom: '10px'
+  },
+  '& .MuiInputBase-root.MuiOutlinedInput-root': {
+    color: '#575757',
+    fontFamily: 'Montserrat, sans-serif !important',
+    height: '50px'
+  }
+}));
 
-  const { handleSubmit, reset, control } = useForm({
-    defaultValues: { textValue: '' }
-  });
+interface IProps {
+  onChange: (value: string) => void
+}
 
-  const onSubmit = (data: any) => {
-    dispatch(getCoordByName(data.textValue));
-    reset();
-  };
+export const Search: React.FC<IProps> = ({ onChange }) => {
+
+  let filterTimeout: any
+  const filterNews = (query: string) => {
+    clearTimeout(filterTimeout)
+    if (!query) return onChange('')
+
+    filterTimeout = setTimeout(() => {
+      onChange(query)
+    }, 500)
+  }
 
   return (
-    <header className="Search">
-      <div className="Search__container">
-        <Box
-          component="form"
-          sx={{
-            '& .MuiTextField-root': { m: 1, width: '25ch' },
-            display: 'flex',
-            width: '100%'
-          }}
-          noValidate
-          autoComplete="off"
-        >
-          <Controller
-            name={"textValue"}
-            control={control}
-            render={({ field: { onChange, value } }) => (
-              <TextField 
-                onChange={onChange}
-                value={value}
-                id="outlined-search" 
-                label="Enter city"
-                type="search" 
-                size="small"
-              /> 
-            )}
-          />
-          <Button
-            variant="contained"
-            onClick={handleSubmit(onSubmit)}
-          >
-            Search
-          </Button>
-        </Box>
-      </div>
-    </header>
+    // <div className="Search">
+      <Box
+        component="form"
+        sx={{
+          width: 600,
+          marginBottom: '40px'
+        }}
+        autoComplete="off"
+        noValidate
+      >
+        <SearchInput variant="standard">
+          <FormLabel component="legend">Filter by keywords</FormLabel>
+          <TextField
+            fullWidth 
+            onChange={(event) => filterNews(event.target.value)}
+            id="outlined-search" 
+            type="search" 
+            size="medium"
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon />
+                </InputAdornment>
+              ),
+            }}
+          /> 
+        </SearchInput>
+      </Box>
+    // </div>
   );
 };
 

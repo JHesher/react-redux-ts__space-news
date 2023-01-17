@@ -34,7 +34,7 @@ type CityWeather = {
     sunset: number,
     type: number,
   },
-  weather: Weather[],
+  news: news[],
   wind: {
     deg: number,
     gust: number,
@@ -42,7 +42,7 @@ type CityWeather = {
   }
 };
 
-type Weather = {
+type news = {
   id: number,
   main: string,
   description: string,
