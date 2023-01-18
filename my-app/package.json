@@ -17,6 +17,7 @@
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
     "axios": "^1.2.0",
+    "express-favicon": "^2.0.1",
     "history": "^5.3.0",
     "lodash.debounce": "^4.0.8",
     "moment": "^2.29.4",
@@ -32,7 +33,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

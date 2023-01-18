@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../redux/store';
 import { getNewsById } from '../../redux/newsSlice';
-import { Box, Grid, Card, CardContent, CardMedia, Typography, CardActions, Button, FormLabel, FormLabelProps, Divider, createTheme, ThemeProvider } from '@mui/material';
+import { Box, Grid, Card, CardContent, CardMedia, Typography, CardActions, Button, FormLabel, FormLabelProps, Divider, ThemeProvider } from '@mui/material';
 import { useAppSelector } from '../../utils/hooks';
 import { useNavigate } from 'react-router-dom';
 import moment from 'moment';
@@ -12,7 +12,7 @@ import styled from '@emotion/styled';
 import { getHighlightedText } from '../../utils/functions';
 import theme from '../../theme';
 
-const CustomFormLabel = styled(FormLabel)<FormLabelProps>(({ theme }) => ({
+const CustomFormLabel = styled(FormLabel)<FormLabelProps>(() => ({
   color: '#363636',
     fontWeight: 600,
     marginBottom: '5px'

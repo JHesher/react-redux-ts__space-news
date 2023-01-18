@@ -35,7 +35,7 @@ export const getNewsList = createAsyncThunk(
       console.log({response})
       dispatch(setNewsList(response.data));
 
-      // if (response.data.statusCode !== 200) {
+      // if (response.data !== 200) {
       //   throw new Error('Server error');
       // }
 
