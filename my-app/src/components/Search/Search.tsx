@@ -37,35 +37,33 @@ export const Search: React.FC<IProps> = ({ onChange }) => {
   }
 
   return (
-    // <div className="Search">
-      <Box
-        component="form"
-        sx={{
-          width: 600,
-          marginBottom: '40px'
-        }}
-        autoComplete="off"
-        noValidate
-      >
-        <SearchInput variant="standard">
-          <FormLabel component="legend">Filter by keywords</FormLabel>
-          <TextField
-            fullWidth 
-            onChange={(event) => filterNews(event.target.value)}
-            id="outlined-search" 
-            type="search" 
-            size="medium"
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <SearchIcon />
-                </InputAdornment>
-              ),
-            }}
-          /> 
-        </SearchInput>
-      </Box>
-    // </div>
+    <Box
+      component="form"
+      sx={{
+        width: 600,
+        marginBottom: '40px'
+      }}
+      autoComplete="off"
+      noValidate
+    >
+      <SearchInput variant="standard">
+        <FormLabel component="legend">Filter by keywords</FormLabel>
+        <TextField
+          fullWidth 
+          onChange={(event) => filterNews(event.target.value)}
+          id="outlined-search" 
+          type="search" 
+          size="medium"
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon />
+              </InputAdornment>
+            ),
+          }}
+        /> 
+      </SearchInput>
+    </Box>
   );
 };
 

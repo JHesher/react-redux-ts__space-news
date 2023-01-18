@@ -1,7 +1,4 @@
-import {
-    createAsyncThunk,
-    createSlice
-  } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { getNewsByIdAPI, getNewsListAPI, INewsList } from '../api/api';
 
 export interface WeatherState {
@@ -32,14 +29,9 @@ export const getNewsList = createAsyncThunk(
   async function (input: string[], { rejectWithValue, dispatch }) {
     try {
       const response = await getNewsListAPI(input);
-      console.log({response})
       dispatch(setNewsList(response.data));
 
-      // if (response.data !== 200) {
-      //   throw new Error('Server error');
-      // }
-
-    return response.data;
+      return response.data;
     } catch (error) {
       return rejectWithValue(error);
     }
@@ -53,11 +45,7 @@ export const getNewsById = createAsyncThunk(
       const response = await getNewsByIdAPI(id);
       dispatch(setNewsById(response.data));
 
-      // if (response.data.statusCode !== 200) {
-      //   throw new Error('Server error');
-      // }
-
-    return response.data;
+      return response.data;
     } catch (error) {
       return rejectWithValue(error);
     }
